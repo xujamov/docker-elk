@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="stash" class="ch.qos.logback.classic.net.SocketAppender">
+    <!--    <destination>172.20.0.1:9600</destination>-->
+    <remoteHost>localhost</remoteHost>
+    <port>9600</port>
+    <!-- encoder is required -->
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="all">
+    <appender-ref ref="stash" />
+  </root>
+</configuration>
